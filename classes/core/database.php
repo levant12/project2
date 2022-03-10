@@ -2,10 +2,10 @@
 
 class Database {
 
-    private $username = "root";
-    private $password = "";
-    private $host = "localhost";
-    private $database = "shop";
+    private $username = "ji1b90atk3dvr2xf";
+    private $password = "lvdzjcu053ky7wb0";
+    private $host = "i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+    private $database = "i8vs6pdp27907erl";
     private $port = "3306";
     private $charset = 'utf8mb4';
 
