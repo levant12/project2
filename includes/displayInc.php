@@ -15,7 +15,7 @@ function echoProducts(int $inSlides, int $inRows, $products, string $slidesClass
         echo ($i%$inSlides == 0) ? "<div class='{$slidesClass} fade'>" : "";
         echo ($i%$inRows == 0) ? "<div class='row'>" : "";
         echo "<div class='p'>";
-        echo "<input type='checkbox' value='{$products[$i]->p_ID}'>";
+        echo "<input type='checkbox' class='delete-checkbox' value='{$products[$i]->p_ID}'>";
         echo "<br>";
         echo "<p>{$products[$i]->p_sku}</p>";
         echo "<h3>{$products[$i]->p_name}</h3>";

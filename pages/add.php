@@ -15,7 +15,7 @@
     </header>
     <hr>
     <div class="form">
-        <form action="../includes/saveInc.php" method="POST" name="addProduct" id="addProduct">
+        <form action="../includes/saveInc.php" method="POST" name="addProduct" id="product_form">
             <br>
             <label for="SKU">SKU</label>
             <input type="text" id="sku" name="SKU" placeholder="SKU" autocomplete="off">

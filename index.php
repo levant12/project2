@@ -14,8 +14,8 @@ require_once "./vendor/autoload.php";
 <body>
     <header>
         <a href="#"><h1>Product List</h1></a>
-        <a href="./pages/add.php" id="linkAdd"><button>Add</button></a>
-        <button id="delete-product-btn" onclick="deleteButtonClickEvent()">Mass Delete</button>
+        <a href="./pages/add.php" id="linkAdd"><button>ADD</button></a>
+        <button id="delete-product-btn" class="delete-checkbox" onclick="deleteButtonClickEvent()">MASS DELETE</button>
     </header>
     <hr>
     <!-- Desktop version -->

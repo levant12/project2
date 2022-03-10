@@ -2,7 +2,6 @@
 
 class Database {
 
-    
     private $username = "ji1b90atk3dvr2xf";
     private $password = "lvdzjcu053ky7wb0";
     private $host = "i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";

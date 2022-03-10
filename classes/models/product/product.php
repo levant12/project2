@@ -31,7 +31,7 @@ class Product extends ProductController{
     }
 
     private function emptyInput() {
-        return empty($this->SKU) || empty($this->name) ||empty($this->price);
+        return empty($this->SKU) || empty($this->name) || empty($this->price) || empty($this->description);
     }
     private function invalidSKU() {
         return preg_match('~[^a-z\d]~i', $this->SKU);
