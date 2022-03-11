@@ -17,24 +17,7 @@ class Product extends ProductController{
     }
 
     public function saveProduct() {
-        $this->valideteProduct();
         $this->insertProduct($this->SKU,$this->name,$this->price,$this->type,$this->description);
-    }
-
-    private function valideteProduct() {
-        if ($this->emptyInput()) {
-            $this->redirect("Fill every field","../add.php?emptyinput");
-        }
-        if ($this->invalidSKU()) {
-            $this->redirect("Invalid SKU","../add.php?invalidSKU");
-        }
-    }
-
-    private function emptyInput() {
-        return empty($this->SKU) || empty($this->name) || empty($this->price) || empty($this->description);
-    }
-    private function invalidSKU() {
-        return preg_match('~[^a-z\d]~i', $this->SKU);
     }
 
 }

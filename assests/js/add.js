@@ -81,15 +81,20 @@ const invalidSKU = () => {
   return false;
 };
 
+const createLabel = ()=>{
+  var label = document.createElement("label");
+  label.htmlFor = "warning";
+  label.innerHTML = "Please fill every field";
+  label.classList.add("warning");
+  return label;
+}
+
 // validate input
 saveBtn.addEventListener("click", function (e) {
   if (emptyInput()) {
     e.preventDefault();
     // create new label for warning text
-    var label = document.createElement("label");
-    label.htmlFor = "warning";
-    label.innerHTML = "Please fill every field";
-    label.classList.add("warning");
+    var label = createLabel();
     // check if user is already warned
     if (
       formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
@@ -103,10 +108,7 @@ saveBtn.addEventListener("click", function (e) {
   } else if (invalidSKU()) {
     e.preventDefault();
     // create new label for warning text
-    var label = document.createElement("label");
-    label.htmlFor = "warning";
-    label.innerHTML = "Please provide SKU without symbols";
-    label.classList.add("warning");
+    var label = createLabel();
     // check if user is already warned
     if (
       formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
