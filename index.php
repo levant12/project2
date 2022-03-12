@@ -21,7 +21,9 @@ require_once "./vendor/autoload.php";
     <!-- Desktop version -->
     <section id="desktop" class="products slider">
         <!-- function will display 10 products in each slide and 5 in each row -->
-        <?php echoProducts(10,5,$products,"slidesD"); ?>
+        <?php 
+        echo $products;
+        echoProducts(10,5,$products,"slidesD"); ?>
     </section>
     <!-- arrows to use slider fot desktop -->
     <a class="prev" id="desk" onclick="plusSlide(-1,'slidesD')">&#10094;</a>
