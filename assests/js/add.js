@@ -1,6 +1,6 @@
 const saveBtn = document.getElementById("save-btn");
 const prodType = document.getElementById("productType");
-const formChildNodes = document.getElementById("addProduct").childNodes;
+const formChildNodes = document.getElementById("product_form").childNodes;
 
 // set dropdown menu default value
 $(document).ready(function () {
