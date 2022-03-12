@@ -2,7 +2,7 @@
 
 require_once "../vendor/autoload.php";
 
-if(isset($_POST['save'])){
+if (isset($_POST['save'])) {
     $sku = $_POST["SKU"];
     $name = $_POST["name"];
     $price = $_POST["price"];

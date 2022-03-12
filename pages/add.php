@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="add.php"><h1>Add Product</h1></a>
+        <a href="#"><h1>Add Product</h1></a>
         <button type="submit" value="save" name="save" id="save-btn" form="addProduct">Save</button>
         <a href="../index.php"><button id="cancel-btn">Cancel</button></a>
     </header>

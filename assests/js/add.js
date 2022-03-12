@@ -60,6 +60,7 @@ const emptyInput = () => {
   const sku = document.getElementById("sku");
   const name = document.getElementById("name");
   const price = document.getElementById("price");
+  // get input fields according type
   const type = prodType.options[prodType.selectedIndex].value;
   const productValueObject = products[type];
   const ids = productValueObject.descriptionId.split(" ");

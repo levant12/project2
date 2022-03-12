@@ -10,7 +10,7 @@ print_r(($checkedBoxes));
 $query = new ProductController();
 
 // remove every checked product
-foreach($checkedBoxes['checked'] as $checkedBox){
+foreach($checkedBoxes['checked'] as $checkedBox) {
     $query->deleteProduct($checkedBox);
 }
 
