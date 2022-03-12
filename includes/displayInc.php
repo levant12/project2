@@ -7,7 +7,7 @@ $query = new ProductController();
 // storing product from database into array
 $products = $query->getProducts();
 
-function echoProducts(int $inSlides, int $inRows, $products, string $slidesClass) {
+function echoProducts(int $inSlides, int $inRows, $products, string $slidesClass){
     // associative array which has appropriate description for each type
     $typeDescription = ["furniture" => "dimension: ", "dvd" => "size: ", "book" => "weight: "];
     // for loop echos every product from products array
