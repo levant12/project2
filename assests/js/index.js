@@ -3,6 +3,10 @@ var checked = [];
 
 var slideIndex = 1;
 
+const slides = document.getElementsByClassName('slidesD');
+console.log(slides);
+
+
 // slide controller
 function showSlide(n, slideNameAny) {
   const slide = (element) => {
