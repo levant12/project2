@@ -3,9 +3,7 @@
 require_once "../vendor/autoload.php";
 
 // get checkedboxes id-s from index.js
-print_r($_POST);
 $checkedBoxes = $_POST;
-print_r(($checkedBoxes));
 
 $query = new ProductController();
 

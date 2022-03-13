@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="#"><h1>Add Product</h1></a>
-        <button type="submit" value="save" name="save" id="save-btn" form="addProduct">Save</button>
+        <button type="submit" value="save" name="save" id="save-btn" form="product_form">Save</button>
         <a href="../index.php"><button id="cancel-btn">Cancel</button></a>
     </header>
     <hr>
