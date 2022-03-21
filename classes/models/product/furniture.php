@@ -29,15 +29,11 @@ class Furniture extends Product {
     }
 
     public function delete(int $id) :void {
-        // TODO: Implement delete() method with cascade
+        //delete() method works with cascade
         $sql = 'DELETE FROM products WHERE ID = ?';
         $param = [$id];
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute($param);
-        // NOTE: if cascade won't work
-//        $sql2 = 'DELETE FROM Furniture WHERE p_ID = ?';
-//        $stmt2 = $this->connect()->prepare($sql2);
-//        $stmt2->execute($param);
     }
 
     public function get() {

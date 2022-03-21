@@ -11,12 +11,12 @@ $dvds = $dvd->get();
 $books = $book->get();
 $furnitures = $furniture->get();
 
-//TODO: merge arrays using array_merge
+//merge arrays
 $products = array_merge($dvds, $books, $furnitures);
 
-//TODO: use usort to sort products array with ID and have mixed display
+//sort products array with ID and have mixed display
 function prodSort($a,$b) {
-    return $a->ID > $b->ID;
+    return $a->getID() > $b->getID();
 }
 if (sizeof($products)>2)
     usort($products, "prodSort");
