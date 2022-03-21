@@ -16,21 +16,21 @@ if (isset($_POST['save'])) {
     $price = $_POST["price"];
     $type = $_POST["productType"];
     switch ($type){
-        case ProductTypeEnum::DVD:{
+        case 'dvd':{
             $product = new DVD();
             setAttributes($product,$sku,$name,$price,$type);
             $product->setSize($_POST ['dvdSize']);
             $product->insert();
             break;
         }
-        case ProductTypeEnum::BOOK:{
+        case 'book':{
             $product = new Book();
             setAttributes($product,$sku,$name,$price,$type);
             $product->setWeight($_POST ['bookWeight']);
             $product->insert();
             break;
         }
-        case ProductTypeEnum::FURNITURE: {
+        case 'furniture': {
             $product = new Furniture();
             setAttributes($product,$sku,$name,$price,$type);
             $product->setHeight($_POST ['furnH']);
