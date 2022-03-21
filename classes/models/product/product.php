@@ -12,9 +12,15 @@ abstract class Product extends Database {
 
     protected abstract function insert();
 
-    protected abstract function delete(int $id);
-
     protected  abstract function get();
+
+    public function delete(int $id) :void {
+        // delete() method works with cascade
+        $sql = 'DELETE FROM products WHERE ID = ?';
+        $param = [$id];
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute($param);
+    }
 
 //  function inserts into products table
     protected function insertIntoProducts() {
