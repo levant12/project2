@@ -2,28 +2,44 @@
 
 require_once "../vendor/autoload.php";
 
+function setAttributes($product, $sku, $name, $price, $type){
+    $product->setPsku($sku);
+    $product->setPName($name);
+    $product->setPPrice($price);
+    $product->setPType($type);
+}
+
+
 if (isset($_POST['save'])) {
     $sku = $_POST["SKU"];
     $name = $_POST["name"];
     $price = $_POST["price"];
     $type = $_POST["productType"];
-    $description;
     switch ($type){
-        case 'dvd':{
-            $description = $_POST ['dvdSize'];
+        case ProductTypeEnum::DVD:{
+            $product = new DVD();
+            setAttributes($product,$sku,$name,$price,$type);
+            $product->setSize($_POST ['dvdSize']);
+            $product->insert();
             break;
         }
-        case 'book':{
-            $description = $_POST['bookWeight'];
+        case ProductTypeEnum::BOOK:{
+            $product = new Book();
+            setAttributes($product,$sku,$name,$price,$type);
+            $product->setWeight($_POST ['bookWeight']);
+            $product->insert();
             break;
         }
-        case 'furniture': {
-            $description = $_POST['furnH'] . 'x' . $_POST['furnW'] . 'x' .  $_POST['furnL'];
+        case ProductTypeEnum::FURNITURE: {
+            $product = new Furniture();
+            setAttributes($product,$sku,$name,$price,$type);
+            $product->setHeight($_POST ['furnH']);
+            $product->setWidth($_POST['furnW']);
+            $product->setLength($_POST['furnL']);
+            $product->insert();
             break;
         }
     }
-     
-    $product = new Product($sku,$name,$price,$type,$description);
-    $product->saveProduct();
+
     header("location: ../index.php?error=none");
 }
