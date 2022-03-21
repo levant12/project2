@@ -38,12 +38,14 @@
                 <input type="text" id="size" name="dvdSize" placeholder="DVD Size" autocomplete="off">
                 <br>
                 <label for="description">Please provide size in MB</label>
+                <br>
             </div>
             <div id="bInfo" class="hidden">
                 <label for="bookWeight">Weight</label>
                 <input type="text" id="weight" name="bookWeight" placeholder="Book Weight" autocomplete="off">
                 <br>
                 <label for="description">Please provide weight in KG</label>
+                <br>
             </div>
             <div id="fInfo" class="hidden">
                 <label for="furnitureHeight">Height</label>
@@ -56,6 +58,7 @@
                 <input type="text" id="length" name="furnL" placeholder="Furniture Lenght" autocomplete="off">
                 <br>
                 <label for="description">Please provide dimensions in HxWxL format and in CM</label>
+                <br>
             </div>
         </form>
     </div>
