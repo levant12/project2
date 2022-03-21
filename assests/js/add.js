@@ -106,12 +106,12 @@ const warning = (e, warningText)=> {
   label.classList.add("warning");
   // check if user is already warned
   if (
-      formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
-      formChildNodes[formChildNodes.length - 1].textContent !=
+      formChildNodes[formChildNodes.length - 1].tagName !== "LABEL" ||
+      formChildNodes[formChildNodes.length - 1].textContent !==
       warningText
   ) {
     document
-        .getElementById("addProduct")
+        .getElementById("product_form")
         .replaceChild(label, formChildNodes[formChildNodes.length - 1]);
   }
 }
