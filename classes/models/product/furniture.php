@@ -50,6 +50,7 @@ class Furniture extends Product {
         $products = [];
         $i = 0;
 
+        $stmt->execute();
         while ($prod = $stmt->fetchObject(__CLASS__)){
             $products[$i] = $prod;
             $i++;
