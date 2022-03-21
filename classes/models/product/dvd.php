@@ -12,14 +12,15 @@ class DVD extends Product {
             ProductTypeEnum::DVD
         ];
         $this->insertIntoProducts()->execute($data);
-        $sql = "INSERT INTO Furniture (p_id, size) VALUES (?, ?)";
         $id = $this->getLastID();
-        $data = [
+        print_r($id);
+        $sql = "INSERT INTO Furniture (p_id, size) VALUES (?, ?)";
+        $data2 = [
             $id,
             $this->size
         ];
         $stmt = $this->connect()->prepare($sql);
-        if($stmt->execute($data))
+        if($stmt->execute($data2))
             $this->redirect("success","../index.php?stmtsfailed=false");
         $this->redirect("failure", "../index.php?stmtsfailed=true");
     }
