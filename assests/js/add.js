@@ -96,63 +96,33 @@ const invalidSKU = () => {
   return false;
 };
 
-const createLabel = (warningText)=>{
+//creates new label for warning text
+const warning = (warningText)=> {
+  e.preventDefault();
+  // create new label for warning text
   var label = document.createElement("label");
   label.htmlFor = "warning";
   label.innerHTML = warningText;
   label.classList.add("warning");
-  return label;
+  // check if user is already warned
+  if (
+      formChildNodes[formChildNodes.length - 1].tagName !== "LABEL" ||
+      formChildNodes[formChildNodes.length - 1].textContent !==
+      warningText
+  ) {
+    document
+        .getElementById("addProduct")
+        .replaceChild(label, formChildNodes[formChildNodes.length - 1]);
+  }
 }
 
 // validate input
 saveBtn.addEventListener("click", function (e) {
   if (emptyInput()) {
-    e.preventDefault();
-    // create new label for warning text
-    var label = createLabel("Please fill every field");
-    // check if user is already warned
-    if (
-      formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please provide SKU without symbols" ||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please provide valid description"
-    ) {
-      document
-        .getElementById("addProduct")
-        .replaceChild(label, formChildNodes[formChildNodes.length - 1]);
-    }
+    warning();
   } else if (invalidSKU()) {
-    e.preventDefault();
-    // create new label for warning text
-    var label = createLabel("Please provide SKU without symbols");
-    // check if user is already warned
-    if (
-      formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please fill every field"||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please provide valid description"
-    ) {
-      document
-        .getElementById("addProduct")
-        .replaceChild(label, formChildNodes[formChildNodes.length - 1]);
-    }
-  } else if (invalidDescr()){
-    e.preventDefault();
-    // create new label for warning text
-    var label = createLabel("Please provide valid description");
-    // check if user is already warned
-    if (
-      formChildNodes[formChildNodes.length - 1].tagName != "LABEL" ||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please fill every field" ||
-      formChildNodes[formChildNodes.length - 1].textContent ===
-        "Please provide SKU without symbols"
-    ) {
-      document
-        .getElementById("addProduct")
-        .replaceChild(label, formChildNodes[formChildNodes.length - 1]);
-    }
+    warning();
+  } else if (invalidDescr()) {
+    warning();
   }
 });
