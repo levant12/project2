@@ -13,7 +13,7 @@ class Furniture extends Product {
             ProductTypeEnum::FURNITURE
         ];
             $this->insertIntoProducts()->execute($data);
-            $sql = "INSERT INTO Furniture (p_id, height, width, length) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO furniture (p_id, height, width, length) VALUES (?, ?, ?, ?)";
             $id = $this->getLastID();
             $data = [
                 $id,

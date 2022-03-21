@@ -14,7 +14,7 @@ class DVD extends Product {
         $this->insertIntoProducts()->execute($data);
         $id = $this->getLastID();
         print_r($id);
-        $sql = "INSERT INTO Furniture (p_id, size) VALUES (?, ?)";
+        $sql = "INSERT INTO dvd (p_id, size) VALUES (?, ?)";
         $data2 = [
             $id,
             $this->size
