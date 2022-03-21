@@ -41,7 +41,7 @@ class DVD extends Product {
         $sql = "SELECT products.*, dvd.size 
                 FROM products
                 JOIN dvd 
-                WHERE products.ID = dvd.prod_ID";
+                WHERE products.ID = dvd.p_ID";
         $stmt = $this->connect()->prepare($sql);
 
         $products = [];
