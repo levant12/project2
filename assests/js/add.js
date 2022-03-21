@@ -53,7 +53,7 @@ const invalidDescr = () =>{
   const ids = productValueObject.descriptionId.split(" ");
   for (let i = 0; i < ids.length; i++) {
     var descrVal = parseInt(document.getElementById(ids[i]).value);
-    if (descrVal === NaN) {
+    if (isNaN(descrVal)) {
       return true;
     }
   }
