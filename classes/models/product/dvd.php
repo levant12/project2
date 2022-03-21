@@ -47,7 +47,7 @@ class DVD extends Product {
         $products = [];
         $i = 0;
 
-        while ($prod = $stmt->fetchObject(__CLASS__)){
+        while ($prod = $stmt->fetchObject("DVD")) {
             $products[$i] = $prod;
             $i++;
         }

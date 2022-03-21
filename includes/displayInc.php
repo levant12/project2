@@ -18,8 +18,8 @@ $products = array_merge($dvds, $books, $furnitures);
 function prodSort($a,$b) {
     return $a->ID > $b->ID;
 }
-
-usort($products, "prodSort");
+if (sizeof($products)>2)
+    usort($products, "prodSort");
 
 function echoProducts(int $inSlides, int $inRows, $products, string $slidesClass){
     // associative array which has appropriate description for each type
