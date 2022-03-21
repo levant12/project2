@@ -97,7 +97,7 @@ const invalidSKU = () => {
 };
 
 //creates new label for warning text
-const warning = (warningText)=> {
+const warning = (e, warningText)=> {
   e.preventDefault();
   // create new label for warning text
   var label = document.createElement("label");
@@ -119,10 +119,10 @@ const warning = (warningText)=> {
 // validate input
 saveBtn.addEventListener("click", function (e) {
   if (emptyInput()) {
-    warning();
+    warning(e, "Please fill every field");
   } else if (invalidSKU()) {
-    warning();
+    warning(e, "Please input SKU without symbols");
   } else if (invalidDescr()) {
-    warning();
+    warning(e, "Please provide valid description");
   }
 });
