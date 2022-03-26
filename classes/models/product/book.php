@@ -18,7 +18,7 @@ class Book extends Product {
             $id,
             $this->weight
         ];
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
         if($stmt->execute($data))
             $this->redirect("success","../index.php?stmtsfailed=false");
         $this->redirect("failure", "../index.php?stmtsfailed=true");
@@ -29,7 +29,7 @@ class Book extends Product {
                 FROM products
                 JOIN book 
                 WHERE products.ID = book.p_ID";
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
 
         $products = [];
         $i = 0;

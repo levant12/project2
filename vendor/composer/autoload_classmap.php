@@ -15,6 +15,7 @@ return array(
     'Database' => $baseDir . '/classes/core/database.php',
     'Furniture' => $baseDir . '/classes/models/product/furniture.php',
     'Product' => $baseDir . '/classes/models/product/product.php',
-    'ProductTypeEnum' => $baseDir . '/classes/models/product/producTypeEnum.php',
+    'ProductTypeEnum' => $baseDir . '/classes/models/product/productTypeEnum.php',
     'Utils' => $baseDir . '/classes/utils/utils.trait.php',
+    'productFactory' => $baseDir . '/classes/utils/productFactory.php',
 );

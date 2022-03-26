@@ -19,7 +19,7 @@ class DVD extends Product {
             $id,
             $this->size
         ];
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
         if($stmt->execute($data2))
             $this->redirect("success","../index.php?stmtsfailed=false");
         $this->redirect("failure", "../index.php?stmtsfailed=true");
@@ -30,7 +30,7 @@ class DVD extends Product {
                 FROM products
                 JOIN dvd 
                 WHERE products.ID = dvd.p_ID";
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
 
         $products = [];
         $i = 0;

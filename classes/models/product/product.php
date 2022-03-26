@@ -1,6 +1,6 @@
 <?php
 
-abstract class Product extends Database {
+abstract class Product {
 
     use Utils;
 
@@ -10,6 +10,7 @@ abstract class Product extends Database {
     protected float $p_price;
     protected string $p_type;
 
+//  TODO: move non abstract functions to trait
     protected abstract function insert();
 
     protected  abstract function get();
@@ -18,8 +19,13 @@ abstract class Product extends Database {
         // delete() method works with cascade
         $sql = 'DELETE FROM products WHERE ID = ?';
         $param = [$id];
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
         $stmt->execute($param);
+    }
+
+    protected function getConnection() :PDO {
+        $config = require 'config.php';
+        return Database::connect($config['database']);
     }
 
 //  function inserts into products table
@@ -27,14 +33,14 @@ abstract class Product extends Database {
         $sql = "INSERT INTO products 
                 (p_sku, p_name, p_price, p_type) VALUES 
                 (?, ?, ?, ?)";
-        $stmt = $this->connect()->prepare($sql);
+        $stmt = $this->getConnection()->prepare($sql);
         return $stmt;
     }
 
 //  function returns last inserted ID from products table
     protected function getLastID(){
         $query = "SELECT MAX(ID) FROM products";
-        $stmt = $this->connect()->prepare($query);
+        $stmt = $this->getConnection()->prepare($query);
         $stmt->execute();
         return $stmt->fetchColumn();
     }

@@ -16,8 +16,9 @@ class ComposerStaticInitd85b1bdadd6f2df9f2eae20282ef4c46
         'Database' => __DIR__ . '/../..' . '/classes/core/database.php',
         'Furniture' => __DIR__ . '/../..' . '/classes/models/product/furniture.php',
         'Product' => __DIR__ . '/../..' . '/classes/models/product/product.php',
-        'ProductTypeEnum' => __DIR__ . '/../..' . '/classes/models/product/producTypeEnum.php',
+        'ProductTypeEnum' => __DIR__ . '/../..' . '/classes/models/product/productTypeEnum.php',
         'Utils' => __DIR__ . '/../..' . '/classes/utils/utils.trait.php',
+        'productFactory' => __DIR__ . '/../..' . '/classes/utils/productFactory.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
