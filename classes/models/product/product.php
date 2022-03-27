@@ -10,7 +10,6 @@ abstract class Product {
     protected float $p_price;
     protected string $p_type;
 
-//  TODO: move non abstract functions to trait
     protected abstract function insert();
 
     protected  abstract function get();
@@ -24,8 +23,7 @@ abstract class Product {
     }
 
     protected function getConnection() :PDO {
-        $config = require 'config.php';
-        return Database::connect($config['database']);
+        return Database::connect(Config::getRegistry('database'));
     }
 
 //  function inserts into products table
