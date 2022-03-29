@@ -14,14 +14,15 @@ abstract class Product {
 
     protected  abstract function get();
 
-    public function delete(int $id) :void {
+    public static function delete(int $id) :void {
         // delete() method works with cascade
         $sql = 'DELETE FROM products WHERE ID = ?';
         $param = [$id];
-        $stmt = $this->getConnection()->prepare($sql);
+        $stmt = self::getConnection()->prepare($sql);
         $stmt->execute($param);
     }
 
+//  returns database connection from Database class
     protected function getConnection() :PDO {
         return Database::connect(Config::getRegistry('database'));
     }
