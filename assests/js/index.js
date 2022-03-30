@@ -53,6 +53,7 @@ function deleteButtonClickEvent() {
       console.log(res);
     },
   });
+  console.log("done");
   // reset checkboxes and reload page
   $(":checkbox").prop("checked", false);
   location.reload();
