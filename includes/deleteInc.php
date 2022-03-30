@@ -3,9 +3,10 @@
 require_once "../vendor/autoload.php";
 
 var_dump($_POST['checked']);
+$checkedboxes = $_POST;
 
 // remove every checked product
-foreach($_POST['checked'] as $checkedBox) {
+foreach($checkedboxes['checked'] as $checkedBox) {
     Product::delete($checkedBox);
 }
 
