@@ -18,12 +18,12 @@ abstract class Product {
         // delete() method works with cascade
         $sql = 'DELETE FROM products WHERE ID = ?';
         $param = [$id];
-        $stmt = self::getConnection()->prepare($sql);
+        $stmt = static::getConnection()->prepare($sql);
         $stmt->execute($param);
     }
 
 //  returns database connection from Database class
-    protected function getConnection() :PDO {
+    protected static function getConnection() :PDO {
         return Database::connect(Config::getRegistry('database'));
     }
 

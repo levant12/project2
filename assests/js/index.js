@@ -55,5 +55,5 @@ function deleteButtonClickEvent() {
   });
   // reset checkboxes and reload page
   $(":checkbox").prop("checked", false);
-  // location.reload();
+  location.reload();
 }
