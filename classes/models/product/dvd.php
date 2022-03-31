@@ -52,4 +52,8 @@ class DVD extends Product {
         $this->size = $size;
     }
 
+    public function setDescription(float $size) {
+        $this->size = $size;
+    }
+
 }

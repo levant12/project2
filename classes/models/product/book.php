@@ -51,4 +51,8 @@ class Book extends Product {
     public function setWeight(float $weight): void {
         $this->weight = $weight;
     }
+
+    public function setDescription(float $weight) {
+        $this->weight = $weight;
+    }
 }

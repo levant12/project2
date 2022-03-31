@@ -77,4 +77,10 @@ class Furniture extends Product {
         return $this->height.'x'.$this->width.'x'.$this->length;
     }
 
+    public function setDescription(float $width, float $length, float $height) {
+        $this->width = $width;
+        $this->length = $length;
+        $this->height = $height;
+    }
+
 }
